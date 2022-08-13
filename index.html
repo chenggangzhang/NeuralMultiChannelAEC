@@ -1,0 +1,997 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Neural Multi-Channel and Multi-Microphone Acoustic Echo Cancellation</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/github-light.css">
+</head>
+
+<body>
+    <article>
+        <header>
+            <h1>Audio samples from paper "Neural Multi-Channel and Multi-Microphone Acoustic Echo Cancellation"</h1>
+        </header>
+    </article>
+
+    <div><b>Authors:</b> Chenggang Zhang, Jinjiang Liu, Hao Li and Xueliang Zhang
+    </div>
+
+    <hr style="height:1px;border:none;border-top:1px solid #555555; width:100%">
+<!--     <h2>Part1: Blind test by Interspeech AEC-challenge 2021</h2>	
+    <hr style="height:1px;border:none;border-top:1px solid #555555; width:100%"> -->
+    <h2> Multi-Channel Multi-Microphone (MCMM) AEC results at SER = -5 dB.</h2>
+	    <hr style="height:1px;border:none;border-top:1px solid #555555; width:100%">
+	<h3>Simulation room scenario</h3>
+    <table class="tg" style="undefined;table-layout: fixed; width: 500px" border="1">
+        <colgroup>
+            <col style="width: 150px">
+            <col style="width: 305px">
+            <col style="width: 305px">
+            <col style="width: 305px">
+            <col style="width: 305px">			
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="tg-c3ow">Signals </th>
+                <th class="tg-c3ow">Sample 1</th>
+                <th class="tg-c3ow">Sample 2</th>
+                <th class="tg-c3ow">Sample 3</th>
+                <th class="tg-c3ow">Sample 4</th>				
+            </tr>
+        </thead>
+        <tbody>
+
+		    <tr>				
+
+				<td rowspan=3 class="tg-pcvp">Reference microphone signal</td>	
+				
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/simu/mic_1/F-F-001-0101-Near-FCJS0-n-SER--5_mix.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/simu/mic_1/F-F-002-0102-Near-FBMH0-n-SER--5_mix.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/simu/mic_1/F-F-003-0101-Near-FAEM0-n-SER--5_mix.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/simu/mic_1/F-F-004-0102-Near-FDAW0-n-SER--5_mix.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/simu/mic_1/F-F-001-0101-Near-FCJS0-n-SER--5_mix.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/simu/mic_1/F-F-002-0102-Near-FBMH0-n-SER--5_mix.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/simu/mic_1/F-F-003-0101-Near-FAEM0-n-SER--5_mix.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/simu/mic_1/F-F-004-0102-Near-FDAW0-n-SER--5_mix.wav">
+                    </audio></td>  
+				
+				</tr>	
+            </tr>
+			
+            <tr>
+                <td rowspan=3 class="tg-pcvp">Target signal</td>
+				
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/simu/tar_1/F-F-001-0101-Near-FCJS0-n-SER-0_ideal_early.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/simu/tar_1/F-F-002-0102-Near-FBMH0-n-SER-0_ideal_early.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/simu/tar_1/F-F-003-0101-Near-FAEM0-n-SER-0_ideal_early.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/simu/tar_1/F-F-004-0102-Near-FDAW0-n-SER-0_ideal_early.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/simu/tar_1/F-F-001-0101-Near-FCJS0-n-SER-0_ideal_early.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/simu/tar_1/F-F-002-0102-Near-FBMH0-n-SER-0_ideal_early.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/simu/tar_1/F-F-003-0101-Near-FAEM0-n-SER-0_ideal_early.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/simu/tar_1/F-F-004-0102-Near-FDAW0-n-SER-0_ideal_early.wav">
+                    </audio></td>   
+				</tr>
+            </tr>			
+
+
+		    <tr>				
+
+				<td rowspan=3 class="tg-pcvp">Yang [1]</td>	
+				
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Yang/simu/est_1/F-F-001-0101-Near-FCJS0-n-SER--5_far.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Yang/simu/est_1/F-F-002-0102-Near-FBMH0-n-SER--5_far.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Yang/simu/est_1/F-F-003-0101-Near-FAEM0-n-SER--5_far.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Yang/simu/est_1/F-F-004-0102-Near-FDAW0-n-SER--5_far.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Yang/simu/est_1/F-F-001-0101-Near-FCJS0-n-SER--5_far.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Yang/simu/est_1/F-F-002-0102-Near-FBMH0-n-SER--5_far.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Yang/simu/est_1/F-F-003-0101-Near-FAEM0-n-SER--5_far.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Yang/simu/est_1/F-F-004-0102-Near-FDAW0-n-SER--5_far.wav">
+                    </audio></td>  
+				
+				</tr>	
+            </tr>
+
+			 
+			<tr>				
+
+				<td rowspan=3 class="tg-pcvp">  Cheng et al. [2] </td>			
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/simu/est_1/F-F-001-0101-Near-FCJS0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/simu/est_1/F-F-002-0102-Near-FBMH0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/simu/est_1/F-F-003-0101-Near-FAEM0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/simu/est_1/F-F-004-0102-Near-FDAW0-n-SER--5_es.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/simu/est_1/F-F-001-0101-Near-FCJS0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/simu/est_1/F-F-002-0102-Near-FBMH0-n-SER--5_es.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/simu/est_1/F-F-003-0101-Near-FAEM0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/simu/est_1/F-F-004-0102-Near-FDAW0-n-SER--5_es.wav">
+                    </audio></td>  
+				
+				</tr>	
+            </tr>
+			
+			
+			<tr>				
+				<td rowspan=3 class="tg-pcvp">  Zhang [3]</td>	
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Zhang/simu/est_1/F-F-001-0101-Near-FCJS0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Zhang/simu/est_1/F-F-002-0102-Near-FBMH0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Zhang/simu/est_1/F-F-003-0101-Near-FAEM0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Zhang/simu/est_1/F-F-004-0102-Near-FDAW0-n-SER--5_es.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Zhang/simu/est_1/F-F-001-0101-Near-FCJS0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Zhang/simu/est_1/F-F-002-0102-Near-FBMH0-n-SER--5_es.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Zhang/simu/est_1/F-F-003-0101-Near-FAEM0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Zhang/simu/est_1/F-F-004-0102-Near-FDAW0-n-SER--5_es.wav">
+                    </audio></td>  				
+				</tr>	
+            </tr>
+			
+			
+			<tr>				
+				<td rowspan=3 class="tg-pcvp">  ICRN-S </td>	
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN-S/simu/est_1/F-F-001-0101-Near-FCJS0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN-S/simu/est_1/F-F-002-0102-Near-FBMH0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN-S/simu/est_1/F-F-003-0101-Near-FAEM0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN-S/simu/est_1/F-F-004-0102-Near-FDAW0-n-SER--5_es.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN-S/simu/est_1/F-F-001-0101-Near-FCJS0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN-S/simu/est_1/F-F-002-0102-Near-FBMH0-n-SER--5_es.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN-S/simu/est_1/F-F-003-0101-Near-FAEM0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN-S/simu/est_1/F-F-004-0102-Near-FDAW0-n-SER--5_es.wav">
+                    </audio></td>  				
+				</tr>	
+            </tr>				
+            </tr>
+
+			<tr>				
+				<td rowspan=3 class="tg-pcvp">  ICRN </td>	
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN/simu/est_1/F-F-001-0101-Near-FCJS0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN/simu/est_1/F-F-002-0102-Near-FBMH0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN/simu/est_1/F-F-003-0101-Near-FAEM0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN/simu/est_1/F-F-004-0102-Near-FDAW0-n-SER--5_es.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN/simu/est_1/F-F-001-0101-Near-FCJS0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN/simu/est_1/F-F-002-0102-Near-FBMH0-n-SER--5_es.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN/simu/est_1/F-F-003-0101-Near-FAEM0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN/simu/est_1/F-F-004-0102-Near-FDAW0-n-SER--5_es.wav">
+                    </audio></td>  				
+				</tr>	
+            </tr>				
+            </tr>
+
+        </tbody>
+
+    </table>
+	
+	
+	<br/>
+    <hr style="height:1px;border:none;border-top:1px solid #555555; width:100%">
+	<h3>Near-end signal is speech, while far-end signal is music</h3>
+    <table class="tg" style="undefined;table-layout: fixed; width: 500px" border="1">
+        <colgroup>
+            <col style="width: 150px">
+            <col style="width: 305px">
+            <col style="width: 305px">
+            <col style="width: 305px">
+            <col style="width: 305px">			
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="tg-c3ow">Signals </th>
+                <th class="tg-c3ow">Sample 1</th>
+                <th class="tg-c3ow">Sample 2</th>
+                <th class="tg-c3ow">Sample 3</th>
+                <th class="tg-c3ow">Sample 4</th>				
+            </tr>
+        </thead>
+        <tbody>
+
+		    <tr>				
+
+				<td rowspan=3 class="tg-pcvp">Reference microphone signal</td>	
+				
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/far_music/mic_1/F-F-005-0102-Near-FBJL0-n-SER--5_mix.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/far_music/mic_1/F-F-006-0101-Near-FSJW0-n-SER--5_mix.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/far_music/mic_1/F-F-007-0101-Near-FSMM0-n-SER--5_mix.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/far_music/mic_1/F-F-013-0101-Near-FMAF0-n-SER--5_mix.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/far_music/mic_1/F-F-005-0102-Near-FBJL0-n-SER--5_mix.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/far_music/mic_1/F-F-006-0101-Near-FSJW0-n-SER--5_mix.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/far_music/mic_1/F-F-007-0101-Near-FSMM0-n-SER--5_mix.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/far_music/mic_1/F-F-013-0101-Near-FMAF0-n-SER--5_mix.wav">
+                    </audio></td>  
+				
+				</tr>	
+            </tr>
+			
+            <tr>
+                <td rowspan=3 class="tg-pcvp">Target signal</td>
+				
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/far_music/tar_1/F-F-005-0102-Near-FBJL0-n-SER-0_ideal_early.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/far_music/tar_1/F-F-006-0101-Near-FSJW0-n-SER-0_ideal_early.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/far_music/tar_1/F-F-007-0101-Near-FSMM0-n-SER-0_ideal_early.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/far_music/tar_1/F-F-013-0101-Near-FMAF0-n-SER-0_ideal_early.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/far_music/tar_1/F-F-005-0102-Near-FBJL0-n-SER-0_ideal_early.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/far_music/tar_1/F-F-006-0101-Near-FSJW0-n-SER-0_ideal_early.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/far_music/tar_1/F-F-007-0101-Near-FSMM0-n-SER-0_ideal_early.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/far_music/tar_1/F-F-013-0101-Near-FMAF0-n-SER-0_ideal_early.wav">
+                    </audio></td>   
+				</tr>
+            </tr>			
+
+
+		    <tr>				
+
+				<td rowspan=3 class="tg-pcvp">Yang [1]</td>	
+				
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Yang/far_music/est_1/F-F-005-0102-Near-FBJL0-n-SER--5_far.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Yang/far_music/est_1/F-F-006-0101-Near-FSJW0-n-SER--5_far.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Yang/far_music/est_1/F-F-007-0101-Near-FSMM0-n-SER--5_far.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Yang/far_music/est_1/F-F-013-0101-Near-FMAF0-n-SER--5_far.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Yang/far_music/est_1/F-F-005-0102-Near-FBJL0-n-SER--5_far.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Yang/far_music/est_1/F-F-006-0101-Near-FSJW0-n-SER--5_far.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Yang/far_music/est_1/F-F-007-0101-Near-FSMM0-n-SER--5_far.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Yang/far_music/est_1/F-F-013-0101-Near-FMAF0-n-SER--5_far.wav">
+                    </audio></td>  
+				
+				</tr>	
+            </tr>
+
+			 
+			<tr>				
+
+				<td rowspan=3 class="tg-pcvp">  Cheng et al. [2] </td>			
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/far_music/est_1/F-F-005-0102-Near-FBJL0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/far_music/est_1/F-F-006-0101-Near-FSJW0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/far_music/est_1/F-F-007-0101-Near-FSMM0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/far_music/est_1/F-F-013-0101-Near-FMAF0-n-SER--5_es.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/far_music/est_1/F-F-005-0102-Near-FBJL0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/far_music/est_1/F-F-006-0101-Near-FSJW0-n-SER--5_es.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/far_music/est_1/F-F-007-0101-Near-FSMM0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/far_music/est_1/F-F-013-0101-Near-FMAF0-n-SER--5_es.wav">
+                    </audio></td>  
+				
+				</tr>	
+            </tr>
+			
+			
+			<tr>				
+				<td rowspan=3 class="tg-pcvp">  Zhang [3]</td>	
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Zhang/far_music/est_1/F-F-005-0102-Near-FBJL0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Zhang/far_music/est_1/F-F-006-0101-Near-FSJW0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Zhang/far_music/est_1/F-F-007-0101-Near-FSMM0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Zhang/far_music/est_1/F-F-013-0101-Near-FMAF0-n-SER--5_es.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Zhang/far_music/est_1/F-F-005-0102-Near-FBJL0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Zhang/far_music/est_1/F-F-006-0101-Near-FSJW0-n-SER--5_es.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Zhang/far_music/est_1/F-F-007-0101-Near-FSMM0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Zhang/far_music/est_1/F-F-013-0101-Near-FMAF0-n-SER--5_es.wav">
+                    </audio></td>  				
+				</tr>	
+            </tr>
+			
+			
+			<tr>				
+				<td rowspan=3 class="tg-pcvp">  ICRN-S </td>	
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN-S/far_music/est_1/F-F-005-0102-Near-FBJL0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN-S/far_music/est_1/F-F-006-0101-Near-FSJW0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN-S/far_music/est_1/F-F-007-0101-Near-FSMM0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN-S/far_music/est_1/F-F-013-0101-Near-FMAF0-n-SER--5_es.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN-S/far_music/est_1/F-F-005-0102-Near-FBJL0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN-S/far_music/est_1/F-F-006-0101-Near-FSJW0-n-SER--5_es.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN-S/far_music/est_1/F-F-007-0101-Near-FSMM0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN-S/far_music/est_1/F-F-013-0101-Near-FMAF0-n-SER--5_es.wav">
+                    </audio></td>  				
+				</tr>	
+            </tr>				
+            </tr>
+
+			<tr>				
+				<td rowspan=3 class="tg-pcvp">  ICRN </td>	
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN/far_music/est_1/F-F-005-0102-Near-FBJL0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN/far_music/est_1/F-F-006-0101-Near-FSJW0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN/far_music/est_1/F-F-007-0101-Near-FSMM0-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN/far_music/est_1/F-F-013-0101-Near-FMAF0-n-SER--5_es.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN/far_music/est_1/F-F-005-0102-Near-FBJL0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN/far_music/est_1/F-F-006-0101-Near-FSJW0-n-SER--5_es.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN/far_music/est_1/F-F-007-0101-Near-FSMM0-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN/far_music/est_1/F-F-013-0101-Near-FMAF0-n-SER--5_es.wav">
+                    </audio></td>  				
+				</tr>	
+            </tr>				
+            </tr>
+
+        </tbody>
+    </table>
+	
+	
+
+	<br/>
+    <hr style="height:1px;border:none;border-top:1px solid #555555; width:100%">
+	<h3>Near-end signal is music, while far-end signal is speech</h3>
+    <table class="tg" style="undefined;table-layout: fixed; width: 500px" border="1">
+        <colgroup>
+            <col style="width: 150px">
+            <col style="width: 305px">
+            <col style="width: 305px">
+            <col style="width: 305px">
+            <col style="width: 305px">			
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="tg-c3ow">Signals </th>
+                <th class="tg-c3ow">Sample 1</th>
+                <th class="tg-c3ow">Sample 2</th>
+                <th class="tg-c3ow">Sample 3</th>
+                <th class="tg-c3ow">Sample 4</th>				
+            </tr>
+        </thead>
+        <tbody>
+
+		    <tr>				
+
+				<td rowspan=3 class="tg-pcvp">Reference microphone signal</td>	
+				
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/near_music/mic_1/music-rfm-0032-n-SER--5_mix.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/near_music/mic_1/music-rfm-0038-n-SER--5_mix.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/near_music/mic_1/music-rfm-0041-n-SER--5_mix.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/near_music/mic_1/music-rfm-0049-n-SER--5_mix.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/near_music/mic_1/music-rfm-0032-n-SER--5_mix.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/near_music/mic_1/music-rfm-0038-n-SER--5_mix.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/near_music/mic_1/music-rfm-0041-n-SER--5_mix.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/near_music/mic_1/music-rfm-0049-n-SER--5_mix.wav">
+                    </audio></td>  
+				
+				</tr>	
+            </tr>
+			
+            <tr>
+                <td rowspan=3 class="tg-pcvp">Target signal</td>
+				
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/near_music/tar_1/music-rfm-0032-n-SER-0_ideal_early.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/near_music/tar_1/music-rfm-0038-n-SER-0_ideal_early.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/near_music/tar_1/music-rfm-0041-n-SER-0_ideal_early.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/near_music/tar_1/music-rfm-0049-n-SER-0_ideal_early.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/near_music/tar_1/music-rfm-0032-n-SER-0_ideal_early.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/near_music/tar_1/music-rfm-0038-n-SER-0_ideal_early.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/near_music/tar_1/music-rfm-0041-n-SER-0_ideal_early.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/near_music/tar_1/music-rfm-0049-n-SER-0_ideal_early.wav">
+                    </audio></td>   
+				</tr>
+            </tr>			
+
+
+		    <tr>				
+
+				<td rowspan=3 class="tg-pcvp">Yang [1]</td>	
+				
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Yang/near_music/est_1/music-rfm-0032-n-SER--5_far.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Yang/near_music/est_1/music-rfm-0038-n-SER--5_far.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Yang/near_music/est_1/music-rfm-0041-n-SER--5_far.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Yang/near_music/est_1/music-rfm-0049-n-SER--5_far.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Yang/near_music/est_1/music-rfm-0032-n-SER--5_far.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Yang/near_music/est_1/music-rfm-0038-n-SER--5_far.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Yang/near_music/est_1/music-rfm-0041-n-SER--5_far.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Yang/near_music/est_1/music-rfm-0049-n-SER--5_far.wav">
+                    </audio></td>  
+				
+				</tr>	
+            </tr>
+
+			 
+			<tr>				
+
+				<td rowspan=3 class="tg-pcvp">  Cheng et al. [2] </td>			
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/near_music/est_1/music-rfm-0032-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/near_music/est_1/music-rfm-0038-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/near_music/est_1/music-rfm-0041-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Cheng/near_music/est_1/music-rfm-0049-n-SER--5_es.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/near_music/est_1/music-rfm-0032-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/near_music/est_1/music-rfm-0038-n-SER--5_es.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/near_music/est_1/music-rfm-0041-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Cheng/near_music/est_1/music-rfm-0049-n-SER--5_es.wav">
+                    </audio></td>  
+				
+				</tr>	
+            </tr>
+			
+			
+			<tr>				
+				<td rowspan=3 class="tg-pcvp">  Zhang [3]</td>	
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Zhang/near_music/est_1/music-rfm-0032-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Zhang/near_music/est_1/music-rfm-0038-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Zhang/near_music/est_1/music-rfm-0041-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/Zhang/near_music/est_1/music-rfm-0049-n-SER--5_es.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Zhang/near_music/est_1/music-rfm-0032-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Zhang/near_music/est_1/music-rfm-0038-n-SER--5_es.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Zhang/near_music/est_1/music-rfm-0041-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/Zhang/near_music/est_1/music-rfm-0049-n-SER--5_es.wav">
+                    </audio></td>  				
+				</tr>	
+            </tr>
+			
+			
+			<tr>				
+				<td rowspan=3 class="tg-pcvp">  ICRN-S </td>	
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN-S/near_music/est_1/music-rfm-0032-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN-S/near_music/est_1/music-rfm-0038-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN-S/near_music/est_1/music-rfm-0041-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN-S/near_music/est_1/music-rfm-0049-n-SER--5_es.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN-S/near_music/est_1/music-rfm-0032-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN-S/near_music/est_1/music-rfm-0038-n-SER--5_es.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN-S/near_music/est_1/music-rfm-0041-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN-S/near_music/est_1/music-rfm-0049-n-SER--5_es.wav">
+                    </audio></td>  				
+				</tr>	
+            </tr>				
+            </tr>
+
+			<tr>				
+				<td rowspan=3 class="tg-pcvp">  ICRN </td>	
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN/near_music/est_1/music-rfm-0032-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN/near_music/est_1/music-rfm-0038-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN/near_music/est_1/music-rfm-0041-n-SER--5_es.jpg" width="300" height="150">
+					</td>
+					<td class="tg-ihkz">
+						<img src="./samples/MCMM/ICRN/near_music/est_1/music-rfm-0049-n-SER--5_es.jpg" width="300" height="150">
+					</td>				
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN/near_music/est_1/music-rfm-0032-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN/near_music/est_1/music-rfm-0038-n-SER--5_es.wav">
+                    </audio></td>                
+				<td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN/near_music/est_1/music-rfm-0041-n-SER--5_es.wav">
+                    </audio></td>
+                <td class="tg-ihkz"><audio controls="">
+                        <source
+                            src="./samples/MCMM/ICRN/near_music/est_1/music-rfm-0049-n-SER--5_es.wav">
+                    </audio></td>  				
+				</tr>	
+            </tr>				
+            </tr>
+
+        </tbody>
+
+    </table>
+		
+	
+	<br/>
+    <hr style="height:1px;border:none;border-top:1px solid #555555; width:100%">
+	<h3>Real record stereo signal using a laptop equipped with two loudspeakers and two microphones. <br/>This recording includes single-talk (the reference signal is a stereo song),
+	double-talk (four speeches by the near-end speaker), and the echo path is changed scenarios.</h3>
+    <table class="tg" style="undefined;table-layout: fixed; width: 500px" border="1">
+        <colgroup>
+            <col style="width: 150px">
+            <col style="width: 1215px">	
+        </colgroup>
+        <thead>
+		<tr>
+			<th class="tg-c3ow">Signals </th>
+			<th class="tg-c3ow">Sample</th>			
+		</tr>
+		</thead>
+		<tbody>
+
+			<tr>				
+				<td rowspan=3 class="tg-pcvp">Reference microphone signal</td>					
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/real_demo/cnn_RIR_180_mix.jpg" width="1210" height="150">
+					</td>		
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls style="width: 1210px;">
+					   <source src="./samples/real_demo/cnn_RIR_180_mix.wav">
+					</audio>
+					</td>
+				</tr>	
+			</tr>	
+			
+			
+			<tr>				
+				<td rowspan=3 class="tg-pcvp">ICRN-S estimated signal</td>					
+				<tr>				
+					<td class="tg-ihkz">
+						<img src="./samples/real_demo/cnn_RIR_180_es.jpg" width="1210" height="150">
+					</td>		
+				</tr>
+				
+				<tr>
+				<td class="tg-ihkz"><audio controls style="width: 1210px;">
+					   <source src="./samples/real_demo/cnn_RIR_180_es.wav">
+					</audio>
+					</td>
+				</tr>	
+			</tr>	
+		
+
+
+       </tbody>
+
+    </table>
+	
+	
+	<br/>	
+	    <hr style="height:1px;border:none;border-top:1px solid #555555; width:100%">
+		<tbody>
+			<h3>References</h3>
+			<tr>
+			[1]Feiran Yang, Ming Wu, and Jun Yang. "Stereophonic acoustic echo suppression based on Wiener filter in the short-time fourier transform domain." IEEE Signal Processing Letters 19.4 (2012): 227-230.
+			<br/>
+			[2]Linjuan Cheng, et al. "Deep learning-based stereophonic acoustic echo suppression without decorrelation." The Journal of the Acoustical Society of America 150.2 (2021): 816-829.
+			 <br/>
+			[3]Hao Zhang, and DeLiang Wang. "A Deep Learning Approach to Multi-Channel and Multi-Microphone Acoustic Echo Cancellation." Proc. Interspeech 2021 (2021): 1139-1143.
+			 <br/>
+			 <br/>
+			 <br/>
+			 </tr>
+		</tbody>
